@@ -3,244 +3,387 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Silverbyte Studio - Official Developer Page</title>
-    <style>
-        :root {
-            --primary: #4F46E5;
-            --primary-hover: #4338CA;
-            --bg: #0F172A;
-            --card-bg: #1E293B;
-            --text-main: #F8FAFC;
-            --text-muted: #94A3B8;
-            --border: #334155;
-        }
+    <title>Silverbyte Studio - Official Mobile Game Developer Portal</title>
+    <meta name="description" content="Official developer portal for Silverbyte Studio (Silver Byte Games). Crafting polished, enjoyable casual and puzzle mobile games including Triple Tiles: Face Match Puzzle.">
+    <meta name="author" content="Silverbyte Studio">
+    <meta name="robots" content="index, follow">
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    <!-- Canonical & Favicon -->
+    <link rel="canonical" href="https://hrud09.github.io/">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="assets/images/studio-logo.png">
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg);
-            color: var(--text-main);
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hrud09.github.io/">
+    <meta property="og:title" content="Silverbyte Studio - Mobile Game Developer">
+    <meta property="og:description" content="Crafting polished, enjoyable casual and puzzle mobile games. Check out Triple Tiles: Face Match Puzzle on Google Play.">
+    <meta property="og:image" content="https://hrud09.github.io/assets/images/triple-tiles-banner.jpg">
 
-        header {
-            text-align: center;
-            padding: 4rem 1.5rem 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Silverbyte Studio - Mobile Game Developer">
+    <meta name="twitter:description" content="Official developer portal for Silverbyte Studio. Home of Triple Tiles: Face Match Puzzle.">
+    <meta name="twitter:image" content="https://hrud09.github.io/assets/images/triple-tiles-banner.jpg">
 
-        .studio-badge {
-            display: inline-block;
-            background: rgba(79, 70, 229, 0.15);
-            color: #818CF8;
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            padding: 0.35rem 0.9rem;
-            border-radius: 9999px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/style.css">
 
-        h1 {
-            font-size: 2.75rem;
-            font-weight: 800;
-            letter-spacing: -0.025em;
-            margin-bottom: 0.75rem;
-            background: linear-gradient(135deg, #FFFFFF 0%, #CBD5E1 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        p.lead {
-            color: var(--text-muted);
-            font-size: 1.15rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        main {
-            flex: 1;
-            max-width: 900px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 2rem 1.5rem 4rem;
-        }
-
-        .section-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1.25rem;
-            color: #E2E8F0;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 0.5rem;
-        }
-
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-2px);
-            border-color: #6366F1;
-        }
-
-        .card h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: #FFFFFF;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.25rem;
-            flex: 1;
-        }
-
-        .card-actions {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.15s ease;
-        }
-
-        .btn-primary {
-            background-color: var(--primary);
-            color: #FFFFFF;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--primary-hover);
-        }
-
-        .btn-secondary {
-            background-color: rgba(255, 255, 255, 0.08);
-            color: #E2E8F0;
-            border: 1px solid var(--border);
-        }
-
-        .btn-secondary:hover {
-            background-color: rgba(255, 255, 255, 0.15);
-        }
-
-        .compliance-box {
-            background-color: rgba(30, 41, 59, 0.6);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .compliance-links {
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            margin-top: 0.75rem;
-        }
-
-        .compliance-links a {
-            color: #818CF8;
-            text-decoration: none;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-        }
-
-        .compliance-links a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 2rem 1.5rem;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        footer a {
-            color: var(--text-muted);
-            text-decoration: underline;
-        }
-    </style>
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Silverbyte Studio",
+      "alternateName": "Silver Byte Games",
+      "url": "https://hrud09.github.io/",
+      "logo": "https://hrud09.github.io/assets/images/studio-logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "silverbytestudio@gmail.com",
+        "contactType": "customer support"
+      }
+    }
+    </script>
 </head>
 <body>
 
-    <header>
-        <span class="studio-badge">Game Developer</span>
-        <h1>Silverbyte Studio</h1>
-        <p class="lead">Creating enjoyable, polished puzzle and casual games for mobile devices.</p>
+    <!-- Site Header & Navigation -->
+    <header class="site-header">
+        <div class="container">
+            <nav class="navbar" aria-label="Main Navigation">
+                <a href="index.html" class="brand-link" aria-label="Silverbyte Studio Home">
+                    <img src="assets/images/studio-logo.png" alt="Silverbyte Studio Logo" class="brand-logo" width="36" height="36">
+                    <span class="brand-title">Silverbyte Studio</span>
+                </a>
+
+                <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+
+                <ul class="nav-links">
+                    <li><a href="#games" class="nav-link">Games</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#compliance" class="nav-link">Publisher Verification</a></li>
+                    <li><a href="#support" class="nav-link">Support</a></li>
+                    <li><a href="privacy-policy.html" class="nav-link">Privacy</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <h2 class="section-title">Games</h2>
-        <div class="cards-grid">
-            <div class="card">
-                <div>
-                    <h3>Triple Tiles - Face Match Puzzle</h3>
-                    <p>An engaging match-3 tile puzzle game where players match fun face tiles to clear the board, unlock unique skin packs, and beat challenging levels.</p>
-                </div>
-                <div class="card-actions">
-                    <a href="privacy-policy.html" class="btn btn-secondary">Privacy Policy</a>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="badge badge-primary">
+                    <span class="dot"></span> Independent Game Studio
+                </span>
+                <h1>Crafting Polished & Engaging Mobile Games</h1>
+                <p class="lead">
+                    We design thoughtful, tactile puzzle and casual games for mobile devices—combining satisfying mechanics, clean art direction, and player-first experiences.
+                </p>
+                <div class="hero-actions">
+                    <a href="#games" class="btn btn-primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                        Explore Games
+                    </a>
+                    <a href="#compliance" class="btn btn-secondary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        Publisher Verification
+                    </a>
                 </div>
             </div>
         </div>
+    </section>
 
-        <h2 class="section-title">Developer Resources & Verification</h2>
-        <div class="compliance-box">
-            <p style="color: var(--text-muted); font-size: 0.95rem;">
-                Official publisher verification and policy resources for Google Play and AdMob:
-            </p>
-            <div class="compliance-links">
-                <a href="app-ads.txt" target="_blank">&bull; app-ads.txt (AdMob Authorized Sellers)</a>
-                <a href="privacy-policy.html">&bull; Privacy Policy</a>
-                <a href="mailto:silverbytestudio@gmail.com">&bull; Contact Support</a>
+    <!-- Games Showcase Section -->
+    <section id="games" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge badge-primary">Portfolio</span>
+                <h2 class="section-title">Our Games</h2>
+                <p class="section-subtitle">Original casual and puzzle titles built with the Unity game engine.</p>
+            </div>
+
+            <!-- Featured Game: Triple Tiles -->
+            <article class="game-featured-card">
+                <div class="game-banner-wrap">
+                    <img src="assets/images/triple-tiles-banner.jpg" alt="Triple Tiles: Face Match Puzzle Feature Graphic" class="game-banner" loading="lazy">
+                </div>
+                <div class="game-featured-content">
+                    <div class="game-header-row">
+                        <img src="assets/images/triple-tiles-icon.png" alt="Triple Tiles Game Icon" class="game-icon-large" width="76" height="76">
+                        <div class="game-title-group">
+                            <h3>Triple Tiles: Face Match Puzzle</h3>
+                            <div class="tag-list">
+                                <span class="badge badge-subtle">Match-3 Puzzle</span>
+                                <span class="badge badge-subtle">Casual</span>
+                                <span class="badge badge-subtle">Offline Play</span>
+                                <span class="badge badge-success"><span class="dot"></span> Available on Google Play</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="game-description">
+                        An engaging and relaxing match-3 tile puzzle game where players match expressive face tiles to clear the board. Featuring handcrafted puzzle progression, unlockable skin packs (animals, emotive faces, and abstract art), and responsive haptic feedback for a deeply tactile experience.
+                    </p>
+
+                    <ul class="game-features-list">
+                        <li class="game-feature-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Dozens of expressive face tile themes & packs
+                        </li>
+                        <li class="game-feature-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Satisfying tactile haptic responses & sound design
+                        </li>
+                        <li class="game-feature-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Hundred of challenging levels with offline play support
+                        </li>
+                        <li class="game-feature-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Smooth 60 FPS mobile performance
+                        </li>
+                    </ul>
+
+                    <div class="game-card-actions">
+                        <a href="https://play.google.com/store/apps/details?id=com.SilverByteGames.FaceTilesMatch" target="_blank" rel="noopener noreferrer" class="btn btn-googleplay">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                            </svg>
+                            Get it on Google Play
+                        </a>
+                        <a href="privacy-policy.html" class="btn btn-secondary">
+                            Privacy Policy
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Upcoming Game: Fallinko -->
+            <div class="section-header" style="margin-top: 3rem; margin-bottom: 1.5rem;">
+                <span class="badge badge-amber"><span class="dot"></span> In Development</span>
+                <h3 style="font-size: 1.35rem; color: #ffffff; margin-top: 0.5rem;">Upcoming Project</h3>
+            </div>
+
+            <div class="games-grid">
+                <article class="game-mini-card">
+                    <div>
+                        <div class="game-mini-top">
+                            <img src="assets/images/fallinko-icon.png" alt="Fallinko Logo" class="game-icon-mini" width="60" height="60">
+                            <div>
+                                <h4>Fallinko</h4>
+                                <span class="badge badge-amber">Under Development</span>
+                            </div>
+                        </div>
+                        <p>
+                            A physics-driven casual arcade title combining kinetic pinball-inspired ball drops, multiplier buckets, and satisfying upgrade loops. Currently being tuned for high replayability and fluid performance.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="badge badge-subtle">Engine: Unity 3D & 2D Physics</span>
+                    </div>
+                </article>
             </div>
         </div>
-    </main>
+    </section>
 
-    <footer>
-        <p>&copy; 2026 Silverbyte Studio. All rights reserved.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.85rem;">Contact: <a href="mailto:silverbytestudio@gmail.com">silverbytestudio@gmail.com</a></p>
+    <!-- About Section / Pillars -->
+    <section id="about" class="section" style="background: rgba(15, 23, 42, 0.3);">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="badge badge-primary">Philosophy</span>
+                <h2 class="section-title">How We Build</h2>
+                <p class="section-subtitle">Every game is built with care, focusing on tight controls, clean visuals, and respectful player treatment.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon-wrap">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="m4.93 4.93 4.24 4.24"></path>
+                            <path d="m14.83 9.17 4.24-4.24"></path>
+                            <path d="m14.83 14.83 4.24 4.24"></path>
+                            <path d="m9.17 14.83-4.24 4.24"></path>
+                        </svg>
+                    </div>
+                    <h3>Satisfying Feel</h3>
+                    <p>Great games feel great to touch. We focus intensely on micro-animations, tactile haptic sensations, and instant touch responses that make interactions pleasurable.</p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-icon-wrap">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                    </div>
+                    <h3>Engine Optimization</h3>
+                    <p>Built with modern Unity pipelines, our games are rigorously optimized for steady 60 FPS framerates, low memory footprints, and battery efficiency on mobile hardware.</p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-icon-wrap">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </div>
+                    <h3>Player Privacy First</h3>
+                    <p>We believe in transparent data practices. We only work with industry-standard, compliant SDKs and give players complete visibility into permissions and data handling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Developer & Compliance Hub -->
+    <section id="compliance" class="section">
+        <div class="container">
+            <div class="compliance-hub">
+                <div class="section-header">
+                    <span class="badge badge-success"><span class="dot"></span> Verified Publisher</span>
+                    <h2 class="section-title">Developer Resources & Publisher Verification</h2>
+                    <p class="section-subtitle">Official publisher verification files, authorized seller records, and policy documents for Google Play and Google AdMob.</p>
+                </div>
+
+                <div class="compliance-grid">
+                    <!-- app-ads.txt -->
+                    <div class="compliance-item">
+                        <div>
+                            <h4>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                </svg>
+                                AdMob app-ads.txt
+                            </h4>
+                            <p>Authorized Digital Sellers verification file hosted at website root, compliant with IAB Tech Lab standards for Google AdMob crawlers.</p>
+                            <code class="code-snippet">google.com, pub-5761093983906969, DIRECT, f08c47fec0942fa0</code>
+                        </div>
+                        <a href="app-ads.txt" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                            Inspect app-ads.txt &rarr;
+                        </a>
+                    </div>
+
+                    <!-- Privacy Policy -->
+                    <div class="compliance-item">
+                        <div>
+                            <h4>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                </svg>
+                                Privacy Policy
+                            </h4>
+                            <p>Full disclosure of SDK integrations (Google Mobile Ads, GameAnalytics, Unity, Google Play Billing) and data deletion procedures.</p>
+                            <code class="code-snippet">Package: com.SilverByteGames.FaceTilesMatch</code>
+                        </div>
+                        <a href="privacy-policy.html" class="btn btn-secondary btn-sm">
+                            Read Privacy Policy &rarr;
+                        </a>
+                    </div>
+
+                    <!-- Terms of Service -->
+                    <div class="compliance-item">
+                        <div>
+                            <h4>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                                </svg>
+                                Terms of Service
+                            </h4>
+                            <p>Standard terms, user licenses, virtual item terms, and developer disclaimers governing use of our mobile applications.</p>
+                            <code class="code-snippet">Publisher: Silverbyte Studio / Silver Byte Games</code>
+                        </div>
+                        <a href="terms.html" class="btn btn-secondary btn-sm">
+                            Read Terms of Service &rarr;
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Support Section -->
+    <section id="support" class="section">
+        <div class="container">
+            <div class="contact-card">
+                <span class="badge badge-primary">Get In Touch</span>
+                <h2 class="section-title" style="margin-top: 0.75rem;">Support & Inquiries</h2>
+                <p style="color: var(--text-muted); max-width: 520px; margin: 0.5rem auto 0;">
+                    Have feedback, need technical support, or inquiring about partnerships? Reach out to our team directly.
+                </p>
+
+                <div class="contact-email-row">
+                    <span class="contact-email-text">silverbytestudio@gmail.com</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="copyEmail('silverbytestudio@gmail.com', this)" aria-label="Copy email address to clipboard">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        Copy Email
+                    </button>
+                </div>
+
+                <div class="contact-channels">
+                    <a href="mailto:silverbytestudio@gmail.com?subject=[Player%20Support]%20Triple%20Tiles" class="btn btn-secondary btn-sm">
+                        Player Support
+                    </a>
+                    <a href="mailto:silverbytestudio@gmail.com?subject=[Business%20Inquiry]%20Silverbyte%20Studio" class="btn btn-secondary btn-sm">
+                        Business & Press
+                    </a>
+                    <a href="mailto:silverbytestudio@gmail.com?subject=[Data%20Deletion%20Request]%20Triple%20Tiles" class="btn btn-secondary btn-sm">
+                        Data Deletion Request
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="assets/images/studio-logo.png" alt="Silverbyte Studio Logo" width="28" height="28" style="border-radius: 4px;">
+                    <span>Silverbyte Studio</span>
+                </div>
+                <ul class="footer-links">
+                    <li><a href="#games">Games</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="app-ads.txt" target="_blank">app-ads.txt</a></li>
+                    <li><a href="mailto:silverbytestudio@gmail.com">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2026</span> Silverbyte Studio (Silver Byte Games). All rights reserved.</p>
+                <p>Google Play and the Google Play logo are trademarks of Google LLC.</p>
+            </div>
+        </div>
     </footer>
 
+    <!-- Script -->
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
