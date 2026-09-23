@@ -40,6 +40,43 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Dropdown menus
+    const dropdowns = document.querySelectorAll('.nav-dropdown');
+    dropdowns.forEach(dropdown => {
+        const toggleBtn = dropdown.querySelector('.nav-dropdown-toggle');
+        if (!toggleBtn) return;
+
+        toggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = dropdown.classList.toggle('open');
+            toggleBtn.setAttribute('aria-expanded', isOpen);
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        dropdowns.forEach(dropdown => {
+            if (!dropdown.contains(e.target) && dropdown.classList.contains('open')) {
+                dropdown.classList.remove('open');
+                const toggleBtn = dropdown.querySelector('.nav-dropdown-toggle');
+                if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            dropdowns.forEach(dropdown => {
+                if (dropdown.classList.contains('open')) {
+                    dropdown.classList.remove('open');
+                    const toggleBtn = dropdown.querySelector('.nav-dropdown-toggle');
+                    if (toggleBtn) {
+                        toggleBtn.setAttribute('aria-expanded', 'false');
+                    }
+                }
+            });
+        }
+    });
+
     // Dynamic current year
     const yearEl = document.getElementById('current-year');
     if (yearEl) {
